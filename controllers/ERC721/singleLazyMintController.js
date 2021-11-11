@@ -3,7 +3,6 @@ var single721LazyMint = require('../../models/single721LazyMint');
 
 exports.all = async (req, res) => {
 
-
     const mints = await single721LazyMint.find();
 
     if(mints){
@@ -11,7 +10,7 @@ exports.all = async (req, res) => {
     }else{
         res.status(400).send(new Error('No data found'));
     }
-
+    
 }
 
 exports.get_one_by_tokenID = async (req, res) => {
@@ -31,6 +30,7 @@ exports.create = async (req, res) => {
     const newMint = new single721LazyMint({
         tokenID: req.body.tokenID,
         creator: req.body.creator,
+        contract: req.body.contract,
         claimer: req.body.claimer
     })
 

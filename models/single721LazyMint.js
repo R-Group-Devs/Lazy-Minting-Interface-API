@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 single721LazyMint = new Schema ({
     tokenID: String,
     creator: String,
+    contract:String,
     claimer: String
 })
 
