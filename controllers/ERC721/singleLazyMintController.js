@@ -13,7 +13,9 @@ exports.all = async (req, res) => {
     
 }
 
-exports.get_claims_by_claimer = async(req, res) => {
+exports.get_claims_by_claimer = async (req, res) => {
+    
+    console.log(req.query)
 
     const claims = await single721LazyMint.find({ tokenID: req.query.tokenID })
 
