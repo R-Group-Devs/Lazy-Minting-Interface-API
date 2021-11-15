@@ -9,7 +9,7 @@ var multiple_lazy_mint_controller = require('../controllers/ERC721/singleLazyMin
 // SINGLE 721 LAZY MINT
 router.get('/single_lazy_mint_controller/all', single_lazy_mint_controller.all);
 
-router.get('/single_lazy_mint_controller/:id', single_lazy_mint_controller.get_one_by_tokenID);
+router.get('/single_lazy_mint_controller/:id', single_lazy_mint_controller.get_claims_by_claimer);
 
 router.post('/single_lazy_mint_controller/create', single_lazy_mint_controller.create);
 

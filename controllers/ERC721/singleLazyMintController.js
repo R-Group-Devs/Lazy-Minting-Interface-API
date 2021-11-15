@@ -13,18 +13,19 @@ exports.all = async (req, res) => {
     
 }
 
-exports.get_one_by_tokenID = async (req, res) => {
+exports.get_claims_by_claimer = async(req, res) => {
 
-    const token = await single721LazyMint.find({ tokenID: req.body.tokenID })
-    
-    if(token){
-        res.send(token)
+    const claims = await single721LazyMint.find({ tokenID: req.query.tokenID })
+
+    if(claims){
+        res.send(claims)
     }else{
-        res.status(400).send(new Error('Cannot find token'));
+        res.status(400).send(new Error('Address cannot claim'));
 
     }
 
 }
+
 exports.create = async (req, res) => {
 
     const newMint = new single721LazyMint({
