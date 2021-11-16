@@ -15,7 +15,7 @@ router.post('/single_lazy_mint_controller/create', single_lazy_mint_controller.c
 
 router.post('/single_lazy_mint_controller/delete/:id', single_lazy_mint_controller.delete_one_by_tokenID);
 
-router.post('/single_lazy_mint_controller/update/:id', single_lazy_mint_controller.update_one_by_tokenID);
+router.post('/single_lazy_mint_controller/update', single_lazy_mint_controller.update_one_by_tokenID);
 
 // MULTIPLE 721 LAZY MINT
 router.get('/multiple_lazy_mint_controller/all', multiple_lazy_mint_controller.all);

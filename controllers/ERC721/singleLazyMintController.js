@@ -48,10 +48,31 @@ exports.create = async (req, res) => {
 
 exports.delete_one_by_tokenID = async (req, res) => {
 
-    
-}
-exports.update_one_by_tokenID = async (req, res) => {
+
+
+
 
     
+}
+
+exports.update_one_by_tokenID = async (req, res) => {
+
+    //upon 
+    const claims = await single721LazyMint.find({ tokenID: req.body.tokenID })
+    if(claims.length){
+
+        token = claims[0]
+
+        if(!token.isMinted){
+            console.log("here")
+            const update = await single721LazyMint.findOneAndUpdate({tokenID: req.body.tokenID}, {isMinted: true})
+            res.send(update)
+        }
+
+    }else{
+        console.log("outside else")
+        res.status(400).send(new Error('No data found'));
+    }
+
 }
 

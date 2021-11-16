@@ -6,7 +6,8 @@ single721LazyMint = new Schema ({
     tokenID: String,
     creator: String,
     contract:String,
-    claimer: String
+    claimer: String,
+    isMinted: Boolean
 })
 
 
