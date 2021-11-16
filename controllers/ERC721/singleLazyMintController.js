@@ -3,7 +3,7 @@ var single721LazyMint = require('../../models/single721LazyMint');
 
 exports.all = async (req, res) => {
 
-    const mints = await single721LazyMint.find();
+    const mints = await single721LazyMint.find({isMinted: false});
 
     if(mints){
         res.send(mints)
