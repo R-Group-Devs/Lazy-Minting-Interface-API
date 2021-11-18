@@ -4,7 +4,6 @@ var single721LazyMint = require('../../models/single721LazyMint');
 exports.all = async (req, res) => {
 
     const mints = await single721LazyMint.find({isMinted: false});
-
     if(mints){
         res.send(mints)
     }else{
@@ -15,7 +14,7 @@ exports.all = async (req, res) => {
 
 exports.get_claims_by_claimer = async (req, res) => {
 
-    const claims = await single721LazyMint.find({ claimer: req.query.claimerAddress })
+    const claims = await single721LazyMint.find({ claimer: req.query.claimerAddress, isMinted: false })
 
     if(claims){
         res.send(claims)
